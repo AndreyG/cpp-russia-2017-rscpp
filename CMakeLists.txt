@@ -14,3 +14,8 @@ add_executable(arithmetic
 )
 
 target_include_directories(arithmetic PRIVATE ${Boost_INCLUDE_DIRS})
+
+add_executable(intrusive-ptr
+  src/intrusive-ptr.cpp
+  src/intrusive-ptr.h
+)
