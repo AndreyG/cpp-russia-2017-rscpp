@@ -26,3 +26,8 @@ add_executable(intrusive-ptr
   src/intrusive-ptr.cpp
   src/intrusive-ptr.h
 )
+
+add_library(analysis
+  src/analysis/inheritance.cpp
+  src/analysis/control-flow.cpp
+)
