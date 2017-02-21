@@ -26,7 +26,7 @@ namespace a
 
             namespace z
             {
-                inline void run()
+                void run()
                 {
                     std::cout << "value1: " << value1 << "\n"
                               << "value2: " << value2 << "\n";
@@ -34,4 +34,9 @@ namespace a
             }
         }
     }
+}
+
+int main()
+{
+    a::x::y::z::run();
 }

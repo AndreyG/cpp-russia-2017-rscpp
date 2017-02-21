@@ -1,13 +1,6 @@
 cmake_minimum_required(VERSION 3.6)
 project(cpp-russia-2017)
 
-add_executable(navigation
-  src/navigation.cpp
-  src/navigation/abrahams_dimov.h
-  src/navigation/usings.h
-  src/navigation/adl.h
-)
-
 find_package(Boost COMPONENTS log unit_test_framework date_time REQUIRED)
 
 add_executable(funny-geom
@@ -54,3 +47,4 @@ target_link_libraries(formatter
 )
 
 add_subdirectory(macro-substitution)
+add_subdirectory(navigation)

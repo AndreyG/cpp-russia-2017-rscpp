@@ -11,7 +11,7 @@ namespace lib
         int value;
     };
 
-    inline void print(std::ostream& out, std::vector<S> const & vec)
+    void print(std::ostream& out, std::vector<S> const & vec)
     {
         out << "vector size: " << vec.size() << "\n";
         for (auto const & s : vec)
@@ -27,16 +27,20 @@ namespace app
         out << "[";
         for (auto const & e : vec)
             out << "(value = " << e.value << ")";
-        out << "]";
+        out << "]\n";
     }
 
-    inline void run()
+    void run()
     {
         std::vector<lib::S> v = {
             { 1 }, { 2 }, { 3 }
         };
         print(std::cout, v);
         (print)(std::cout, v);
-        std::cout << std::endl;
     }
+}
+
+int main()
+{
+    app::run();
 }
