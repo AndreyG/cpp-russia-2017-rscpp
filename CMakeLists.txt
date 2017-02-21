@@ -8,7 +8,7 @@ add_executable(navigation
   src/navigation/adl.h
 )
 
-find_package(Boost COMPONENTS log REQUIRED)
+find_package(Boost COMPONENTS log unit_test_framework date_time REQUIRED)
 
 add_executable(funny-geom
   src/funny-geom.cpp
@@ -40,3 +40,15 @@ add_library(code-assistance
 )
 
 target_include_directories(code-assistance PRIVATE ${Boost_INCLUDE_DIRS})
+
+add_executable(formatter
+  src/formatter.h
+  src/formatter-tests.cpp
+)
+
+target_compile_definitions(formatter PRIVATE BOOST_ALL_DYN_LINK)
+target_link_libraries(formatter
+  LINK_PRIVATE
+    Boost::unit_test_framework
+    Boost::date_time
+)
