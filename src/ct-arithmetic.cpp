@@ -1,5 +1,9 @@
 #include <boost/mpl/int.hpp>
 #include <boost/mpl/plus.hpp>
+#include <boost/mpl/vector.hpp>
+#include <boost/mpl/push_back.hpp>
+#include <boost/mpl/pop_front.hpp>
+#include <boost/mpl/at.hpp>
 
 #include <boost/preprocessor/arithmetic/div.hpp>
 
@@ -22,4 +26,15 @@ int main()
 
     std::cout   << "BOOST_PP_DIV_BASE(72, 9) = " << BOOST_PP_DIV_BASE(72, 9) << "\n"
                 << "BOOST_PP_DIV(72, 9) = "      << BOOST_PP_DIV(72, 9)      << "\n";
+
+    using ll_type = at_c<
+        pop_front<
+            pop_front<
+                push_back<
+                    vector<short, int, long>, long long
+                >::type
+            >::type
+        >::type,
+        1
+    >::type;
 }
