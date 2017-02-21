@@ -52,3 +52,5 @@ target_link_libraries(formatter
     Boost::unit_test_framework
     Boost::date_time
 )
+
+add_subdirectory(macro-substitution)
