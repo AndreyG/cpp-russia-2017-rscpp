@@ -27,6 +27,8 @@ add_executable(intrusive-ptr
   src/intrusive-ptr.h
 )
 
+target_include_directories(intrusive-ptr PRIVATE ${Boost_INCLUDE_DIRS})
+
 add_library(analysis
   src/analysis/inheritance.cpp
   src/analysis/control-flow.cpp

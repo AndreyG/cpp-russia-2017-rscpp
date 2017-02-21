@@ -32,3 +32,23 @@ int main()
     assert(v.capacity() == v.size());
     v.push_back(std::move(ptr));
 }
+
+//#include <boost/utility/string_ref.hpp>
+//
+//namespace
+//{
+//    struct S1
+//    {
+//        boost::string_ref str;
+//    };
+//
+//    struct S2
+//    {
+//        boost::string_ref str;
+//
+//        S2(S2 &&) noexcept = default;
+//    };
+//
+//    static_assert(!std::is_nothrow_move_constructible_v<S1>, "S1 is not nothrow move constructible");
+//    static_assert(!std::is_nothrow_move_constructible_v<S2>, "S2 is not nothrow move constructible");
+//}
