@@ -33,3 +33,10 @@ add_library(analysis
   src/analysis/inheritance.cpp
   src/analysis/control-flow.cpp
 )
+
+add_library(code-assistance
+  src/code-assistance/completion.cpp
+  src/code-assistance/method-generation.cpp
+)
+
+target_include_directories(code-assistance PRIVATE ${Boost_INCLUDE_DIRS})
