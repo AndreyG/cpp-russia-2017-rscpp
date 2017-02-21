@@ -46,5 +46,8 @@ target_link_libraries(formatter
     Boost::date_time
 )
 
-add_subdirectory(macro-substitution)
+add_library(macro-substitution
+  src/macro-substitution.cpp
+)
+
 add_subdirectory(navigation)
