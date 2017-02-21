@@ -1,19 +1,17 @@
-// TODO: write function read_content: filesystem::path -> std::vector<char>
+#include <filesystem>
+#include <fstream>
 
-//#include <filesystem>
-//#include <fstream>
-//
-//auto read_content(std::experimental::filesystem::path const & path) -> std::vector<char>
-//{
-//    if (!exists(path))
-//        throw std::logic_error("no such file");
-//
-//    std::ifstream in(path.string(), std::ios::end);
-//    std::vector<char> result(in.tellg());
-//    in.seekg(std::ios::beg);
-//    in.read(result.data(), result.size());
-//    return result;
-//}
+auto read_content(std::experimental::filesystem::path const & path) -> std::vector<char>
+{
+    if (!exists(path)) // TODO: write `if` using 'extensions-method-completion' and postfix template 'else'
+        throw std::logic_error("no such file");
+
+    std::ifstream in(path.string(), std::ios::end); // TODO: comment #include <fstream>
+    std::vector<char> result(in.tellg());
+    in.seekg(std::ios::beg);                        // TODO: remove name-qualifier `std`
+    in.read(result.data(), result.size());
+    return result;
+}
 
 // ----------------------------------------------------------------------------------------------------------------- //
 
