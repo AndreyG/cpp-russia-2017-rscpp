@@ -50,4 +50,8 @@ add_library(macro-substitution
   src/macro-substitution.cpp
 )
 
+add_executable(logging src/logging.cpp)
+target_compile_definitions(logging PRIVATE BOOST_ALL_DYN_LINK)
+target_link_libraries(logging LINK_PRIVATE Boost::log)
+
 add_subdirectory(navigation)
