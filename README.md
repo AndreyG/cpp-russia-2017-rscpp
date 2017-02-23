@@ -14,7 +14,7 @@ For example:
 ```
 cd C:\
 git clone https://github.com/JetBrains/cpp-russia-2017-rscpp.git
-cd cpp-russia-2017
+cd cpp-russia-2017-rscpp
 mkdir build
 cd build
 cmake -G "Visual Studio 14 2015" -DBOOST_ROOT="C:/local/boost_1_61_0" ..
